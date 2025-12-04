@@ -29,13 +29,10 @@ class TestLZ77(unittest.TestCase):
             compressed_path = input_path + ".compressed"
             decompressed_path = input_path + ".decompressed"
 
-            # Сжимаем
             self.compressor.compress(input_path, compressed_path)
 
-            # Распаковываем
             self.compressor.decompress(compressed_path, decompressed_path)
 
-            # Проверяем
             with open(decompressed_path, 'rb') as f:
                 result = f.read()
 
